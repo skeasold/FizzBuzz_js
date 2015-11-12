@@ -5,6 +5,50 @@
     <title>FizzBuzz Refactored</title>
   </head>
   <body>
-    <script src = "fizzbuzzrefactor.js"></script>
+    <h1>FizzBuzz</h1>
+    <hr>
+    <p>
+      This application will print a range of numbers. Numbers divisible by "3" will be replaced with "Fizz",
+      values divisible by "5" will be replaced with "Buzz" and values divisible by both will be replaced with "FizzBuzz."
+      The range of numbers will start at "1" by default and will stop at a number of your choice. To start, click the button below!
+    </p>
+    <br>
+
+    <button onclick="startFizzBuzz()">Start FizzBuzzing!</button>
+
+    <script>
+    function startFizzBuzz () {
+      startingNum = 1
+      endingNum = prompt("Please type an ending number to start FizzBuzz.");
+      endingNumConversion = parseInt(endingNum);
+      isNumberValidation();
+    }
+
+    function isNumberValidation () {
+      if (isNaN (endingNumConversion) === true) {
+          alert("That is not a number. Please try again.");
+          startFizzBuzz();
+      }
+      else {
+        FizzBuzz();
+      }
+    }
+
+    function FizzBuzz () {
+      for (num = startingNum; num <= endingNumConversion; num++) {
+        if (num % 15 === 0)
+          document.write("FizzBuzz" + "<br>");
+
+        else if (num % 3 === 0)
+          document.write("Fizz" + "<br>");
+
+        else if (num % 5 === 0)
+          document.write("Buzz" + "<br>");
+
+        else
+          document.write(num + "<br>");
+      }
+    }
+    </script>
   </body>
 </html>
