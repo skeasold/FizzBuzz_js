@@ -4,7 +4,7 @@
 
 function fizzbuzz (startingNum , endingNum) {
   var startingNum = 1
-  var endingNum = prompt("Please type a number to start FizzBuzz.");
+  var endingNum = +prompt("Please type a number to start FizzBuzz.");
 
   for (num = startingNum; num <= endingNum; num++) {
     if (num % 15 === 0)
